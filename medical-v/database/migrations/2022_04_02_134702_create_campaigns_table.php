@@ -14,8 +14,20 @@ class CreateCampaignsTable extends Migration
     public function up()
     {
         Schema::create('campaigns', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('campaign_id');
+            $table->string('nama_campaign');
+            $table->string('kategori');
+            $table->unsignedBigInteger('org_id');
+            $table->string('org_name');
+            $table->date('tgl_mulai_campaign');
+            $table->date('tgl_selesai_campaign');
+            $table->date('tgl_mulai_pendaftaran');
+            $table->date('tgl_selesai_pendaftaran');
+            $table->string('deskripsi');
+            $table->string('verif_status');
+            $table->string('campaign_status');
+
+            $table->foreign('org_id')->references('id_organisasi')->on('org_accounts');
         });
     }
 

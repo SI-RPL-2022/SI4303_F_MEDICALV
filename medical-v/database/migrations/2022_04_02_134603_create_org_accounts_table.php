@@ -14,8 +14,11 @@ class CreateOrgAccountsTable extends Migration
     public function up()
     {
         Schema::create('org_accounts', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('id_organisasi');
+            $table->string('nama_organisasi');
+            $table->string('alamat_organisasi');
+            $table->string('password');
+            $table->string('logo_organisasi');
         });
     }
 

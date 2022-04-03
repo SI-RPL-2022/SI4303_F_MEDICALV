@@ -14,8 +14,13 @@ class CreateVolAccountsTable extends Migration
     public function up()
     {
         Schema::create('vol_accounts', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('id_user');
+            $table->string('nama_user');
+            $table->string('email');
+            $table->string('tanggal_lahir');
+            $table->string('gender');
+            $table->string('alamat');
+            $table->string('foto_profil');
         });
     }
 
