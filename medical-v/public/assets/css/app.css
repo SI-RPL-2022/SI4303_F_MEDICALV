@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+.medical-v-color-text {
+    color: #6AB99E;
+}
+
+/* .font-nav {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #000000;
+} */
+
+.posisi-nav-logo {
+    position: absolute;
+    left: 11.46%;
+    right: 86.6%;
+    top: 1.04%;
+    bottom: 98.06%;
+}
+
+.posisi-nav-telusuri {
+    position: absolute;
+    left: 23.33%;
+    right: 66.6%;
+    top: 1.23%;
+    bottom: 98.06%;
+}
+
+.posisi-nav-tentang {
+    position: absolute;
+    left: 34.93%;
+    right: 57.64%;
+    top: 1.23%;
+    bottom: 98.06%;
+    
+}
+
+.posisi-nav-cara {
+    position: absolute;
+    left: 44.31%;
+    right: 50.07%;
+    top: 1.23%;
+    bottom: 98.06%;
+}
+
+.posisi-nav-campaign {
+    position: absolute;
+    left: 71.53%;
+    right: 20%;
+    top: 1.23%;
+    bottom: 98.06%;
+}
