@@ -4,6 +4,25 @@
     color: #6AB99E;
 }
 
+.medical-v-color {
+    color: #6AB99E;
+}
+
+.medical-v-color-background {
+    background-color: #6AB99E;
+}
+
+.btn-outline-success {
+    border-color: #6AB99E;
+    color:#6AB99E;
+}
+
+.btn-outline-success:hover {
+    border-color: #6AB99E;
+    background-color: #6AB99E;
+    color:white;
+}
+
 /* .font-nav {
     font-family: 'Inter';
     font-style: normal;

@@ -16,14 +16,22 @@
                     <a class="nav-link font-nav posisi-nav-cara mt-2" href="#" style="color: black; width: 50%">Cara Kerja</a>
                 </li>
             </ul>
-            <ul class="navbar-nav me-5">
-                <li class="nav-item">
-                    <a class="nav-link font-nav posisi-nav-campaign mt-2 inline" href="#" style="color: black">Campaign Saya</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link posisi-profile-header" href="#" style="color: black"><img src="{{ asset('assets/img/icon/profile.png') }}" alt="icon-profile"></a>
-                </li>
-            </ul>
+            @auth
+                <ul class="navbar-nav me-5">
+                    <li class="nav-item">
+                        <a class="nav-link font-nav posisi-nav-campaign mt-2 inline" href="#" style="color: black">Campaign Saya</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link posisi-profile-header" href="#" style="color: black"><img src="{{ asset('assets/img/icon/profile.png') }}" alt="icon-profile"></a>
+                    </li>
+                </ul>
+            @endauth
+            @guest
+                <ul class="navbar-nav me-5">
+                    <a class="btn btn-lg medical-v-color-background" href="#" style="color: white">Daftar</a>
+                    <a class="btn btn-lg btn-outline-success mx-3" href="/login">Login</a>
+                </ul>
+            @endguest
         </div>
     </div>
 </nav>
