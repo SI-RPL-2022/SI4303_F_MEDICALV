@@ -54,3 +54,27 @@
     top: 1.23%;
     bottom: 98.06%;
 }
+
+.posisi-footer {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 45%;
+    bottom: 0%;
+}
+
+.posisi-profile-header {
+    position: absolute;
+    left: 82.78%;
+    right: 13.68%;
+    top: 0.78%;
+    bottom: 97.57%;    
+}
+
+/* .posisi-icon-putih {
+    position: absolute;
+    left: 11.46%;
+    right: 85.07%;
+    top: 90.23%;
+    bottom: 8.16%; 
+} */
