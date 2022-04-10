@@ -23,19 +23,19 @@
                     <br>
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"><b>Login</b></h5>
                     <div class="form-outline mb-4">
-                        <input type="email" id="form2Example17" class="form-control form-control-lg" />
-                        <label class="form-label" for="form2Example17">Email</label>
+                        <label class="form-label" for="email">Email</label>
+                        <input type="email" id="email" class="form-control form-control-lg" />
                     </div>
                     <div class="form-outline mb-4">
-                        <input type="password" id="form2Example27" class="form-control form-control-lg" />
-                        <label class="form-label" for="form2Example27">Password</label>
+                        <label class="form-label" for="password">Password</label>
+                        <input type="password" id="password" class="form-control form-control-lg" />
                     </div>
                     <div class="pt-1 mb-4">
                         <button class="btn btn-lg medical-v-color-background" type="button" style="color: white">Login</button>
                     </div>
                     <a class="small text-muted" href="#!">Lupa password?</a>
                     <p class="mb-5 pb-lg-2 medical-v-color-text">Belum punya akun?
-                        <a class="medical-v-color-text" href="#!">Daftar disini</a>
+                        <a class="medical-v-color-text" href="/register">Daftar disini</a>
                     </p>
                     </form>
                 </div>
