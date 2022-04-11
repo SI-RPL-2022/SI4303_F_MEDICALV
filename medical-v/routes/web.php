@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\Campaign;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/org/addcampaign', [CampaignController::class, 'index']);
+Route::get('/org/addcampaign', [Campaign::class, 'index']);
+Route::resource('/org/addcampaign', [Campaign::class]);
