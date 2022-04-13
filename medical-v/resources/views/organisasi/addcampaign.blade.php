@@ -8,12 +8,13 @@
 </head>
 <body>
     <h1>Mulai Campaign</h1>
+    <form action="/addcampaign" method="POST" enctype="multipart/form-data">
     @csrf
-    <form action="org/addcampaign" method="post" >
         <label for="nama_campaign">Nama Campaign</label>
         <input type="text" name="nama_campaign">
         <br>
         <br>
+        <input type="hidden" name="org_id" value="1">
         <label for="nama_org">Penyelenggara</label>
         <input type="text" name="nama_org">
         <br>
@@ -42,6 +43,10 @@
         <textarea name="deskripsi" id="" cols="30" rows="10"></textarea>
         <br>
         <br>
+        <!-- <label for="poster">Poster Campaign</label>
+        <input type="file" name="poster" id="">
+        <br>
+        <br> -->
         <input type="hidden" name="verif_status" value="Belum Terverifikasi">
         <br>
         <br>

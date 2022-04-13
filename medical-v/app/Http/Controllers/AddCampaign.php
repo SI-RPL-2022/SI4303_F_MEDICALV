@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Campaign;
 
-class Campaign extends Controller
+class AddCampaign extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,7 +37,28 @@ class Campaign extends Controller
     public function store(Request $request)
     {
         //
+        $campaign = new Campaign();
+        $campaign->nama_campaign = $request->nama_campaign;
+        $campaign->org_id = $request->org_id;
+        $campaign->org_name = $request->nama_org;
+        $campaign->kategori = $request->kategori;
+        $campaign->tgl_mulai_campaign = $request->tgl_mulai;
+        $campaign->tgl_selesai_campaign = $request->tgl_selesai;
+        $campaign->tgl_mulai_pendaftaran = $request->tgl_daftar;
+        $campaign->tgl_selesai_pendaftaran = $request->tutup_daftar;
+        $campaign->deskripsi = $request->deskripsi;
+        $campaign->verif_status = $request->verif_status;
+        $campaign->campaign_status = $request->campaign_status;
+        $campaign->save();
+
+        return redirect('/addcampaign');
         
+
+        
+        
+
+        
+
     }
 
     /**
