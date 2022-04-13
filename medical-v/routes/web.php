@@ -18,5 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/org/addcampaign', [Campaign::class, 'index']);
-Route::resource('/org/addcampaign', [Campaign::class]);
+Route::resource('/addcampaign', Campaign::class);
