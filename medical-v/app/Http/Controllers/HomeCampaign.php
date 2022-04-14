@@ -61,6 +61,8 @@ class HomeCampaign extends Controller
     public function edit($id)
     {
         //
+        $campaign = Campaign::find($id);
+        return view('organisasi.editcampaign', compact('campaign'));
     }
 
     /**
@@ -73,6 +75,20 @@ class HomeCampaign extends Controller
     public function update(Request $request, $id)
     {
         //
+        $campaign = Campaign::find($id);
+        $campaign->nama_campaign = $request->nama_campaign;
+        $campaign->org_id = $request->org_id;
+        $campaign->org_name = $request->nama_org;
+        $campaign->kategori = $request->kategori;
+        $campaign->tgl_mulai_campaign = $request->tgl_mulai;
+        $campaign->tgl_selesai_campaign = $request->tgl_selesai;
+        $campaign->tgl_mulai_pendaftaran = $request->tgl_daftar;
+        $campaign->tgl_selesai_pendaftaran = $request->tutup_daftar;
+        $campaign->deskripsi = $request->deskripsi;
+        $campaign->save();
+
+        return redirect('/org');
+
     }
 
     /**

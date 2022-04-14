@@ -18,6 +18,7 @@
         <td>Nama Campaign</td>
         <td>Kategori</td>
         <td>Tanggal Campaign</td>
+        <td>Deskripsi</td>
         <td>Status Campaign</td>
         <td>Status Verifikasi</td>
         <td>Action</td>
@@ -29,10 +30,11 @@
         <td>{{$row->nama_campaign}}</td>
         <td>{{$row->kategori}}</td>
         <td>{{$row->tgl_mulai_campaign}} s.d {{$row->tgl_selesai_campaign}} </td>
+        <td>{{$row->deskripsi}}</td>
         <td>{{$row->campaign_status}}</td>
         <td>{{$row->verif_status}}</td>
         <td>
-            <a href="">Edit Campaign</a>
+            <a href="/org/{{$row->id}}/edit">Edit Campaign</a>
             <form action="/org/{{$row->id}}" method='POST' class="d-inline">
                 @method('delete')
                 @csrf
