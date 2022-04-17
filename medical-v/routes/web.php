@@ -23,7 +23,7 @@ use App\Http\Controllers\RegistCampaignController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 // Route::get('/org/addcampaign', [CampaignController::class, 'index']);
