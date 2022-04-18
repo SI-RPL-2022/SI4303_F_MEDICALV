@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -10,6 +9,8 @@ use App\Http\Controllers\AddCampaign;
 use App\Http\Controllers\TelusuriCampaignController;
 use App\Http\Controllers\DetailCampaignController;
 use App\Http\Controllers\RegistCampaignController;
+use App\Http\Controllers\KategoriController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,8 @@ Route::resource('/addcampaign', AddCampaign::class);
 Route::get('/telusuricampaign', [TelusuriCampaignController::class, 'telusuricampaign']);
 Route::get('/detailcampaign', [DetailCampaignController::class, 'detailcampaign']);
 Route::get('/registcampaign', [RegistCampaignController::class, 'registcampaign']);
+Route::resource('/addkategori', KategoriController::class);
+Route::get('/kategori', function() {
+    return view('kategori.index'); 
+});
+Route::resource('/kategori/campaign', KategoriController::class);
