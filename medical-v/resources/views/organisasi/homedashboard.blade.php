@@ -18,7 +18,9 @@
         <td>Nama Campaign</td>
         <td>Kategori</td>
         <td>Tanggal Campaign</td>
+        <td>Lokasi Campaign</td>
         <td>Deskripsi</td>
+        <td>Poster</td>
         <td>Status Campaign</td>
         <td>Status Verifikasi</td>
         <td>Action</td>
@@ -30,7 +32,9 @@
         <td>{{$row->nama_campaign}}</td>
         <td>{{$row->kategori}}</td>
         <td>{{$row->tgl_mulai_campaign}} s.d {{$row->tgl_selesai_campaign}} </td>
+        <td>{{$row->kecamatan}}, {{$row->kabupaten}}, {{$row->provinsi}} </td>
         <td>{{$row->deskripsi}}</td>
+        <td><img src="/img/poster/{{$row->poster}}" alt="..." style="width: 200px"></td>
         <td>{{$row->campaign_status}}</td>
         <td>{{$row->verif_status}}</td>
         <td>

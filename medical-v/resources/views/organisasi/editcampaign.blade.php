@@ -20,8 +20,25 @@
         <input type="text" name="nama_org" value="{{$campaign->org_name}}">
         <br>
         <br>
+        <label>Lokasi Campaign</label>
+        <select name="provinsi" id="province" placeholder="Provinsi">
+                <option value="{{$campaign->provinsi}}">{{$campaign->provinsi}}</option>
+                @foreach ($provinces as $id => $name)
+                    <option value="{{ $name }}">{{ $name }}</option>
+                @endforeach
+        </select>
+
+        <input type="text" name="kabupaten" value="{{$campaign->kabupaten}}">
+        <input type="text" name="kecamatan" value="{{$campaign->kecamatan}}">
+        <br>
+        <br>
         <label for="kategori">Kategori</label>
-        <input type="text" name="kategori" value="{{$campaign->kategori}}">
+        <select name="kategori" id="province" placeholder="Provinsi">
+                <option value="{{$campaign->kategori}}">{{$campaign->kategori}}</option>
+                @foreach ($kat as $id => $kategori)
+                    <option value="{{ $kategori }}">{{ $kategori }}</option>
+                @endforeach
+        </select>
         <br>
         <br>
         <label for="tgl_mulai">Mulai Campaign</label>
@@ -44,10 +61,10 @@
         <textarea name="deskripsi" id="" cols="30" rows="10">{{$campaign->deskripsi}}</textarea>
         <br>
         <br>
-        <!-- <label for="poster">Poster Campaign</label>
+        <label for="poster">Poster Campaign</label>
         <input type="file" name="poster" id="">
         <br>
-        <br> -->
+        <br>
 
         <input type="submit" value="Update Campaign" name="submit">
     </form>

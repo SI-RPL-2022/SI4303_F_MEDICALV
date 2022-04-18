@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Campaign;
+use App\Models\Kategori;
+use Laravolt\Indonesia\Models\Province;
+use Laravolt\Indonesia\Models\City;
 
 class HomeCampaign extends Controller
 {
@@ -61,8 +64,14 @@ class HomeCampaign extends Controller
     public function edit($id)
     {
         //
+
         $campaign = Campaign::find($id);
-        return view('organisasi.editcampaign', compact('campaign'));
+        $kat = Kategori::pluck('kategori');
+        $provinces = Province::pluck('name', 'id');
+        return view('organisasi.editcampaign', compact('campaign'), [
+            'provinces' => $provinces,
+            'kat' => $kat
+        ]);
     }
 
     /**
@@ -75,6 +84,12 @@ class HomeCampaign extends Controller
     public function update(Request $request, $id)
     {
         //
+        // set file foto dengan nama baru
+        $poster = time().'.'.$request->poster->extension();
+
+        //path penyimpanan gambar
+        $request->poster->move(public_path('/img/poster'), $poster);
+
         $campaign = Campaign::find($id);
         $campaign->nama_campaign = $request->nama_campaign;
         $campaign->org_id = $request->org_id;
@@ -85,6 +100,7 @@ class HomeCampaign extends Controller
         $campaign->tgl_mulai_pendaftaran = $request->tgl_daftar;
         $campaign->tgl_selesai_pendaftaran = $request->tutup_daftar;
         $campaign->deskripsi = $request->deskripsi;
+        $campaign->poster = $poster;
         $campaign->save();
 
         return redirect('/org');

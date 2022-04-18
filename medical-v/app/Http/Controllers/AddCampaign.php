@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Campaign;
+use App\Models\Kategori;
 use Laravolt\Indonesia\Models\Province;
 use Laravolt\Indonesia\Models\City;
 
@@ -17,9 +18,11 @@ class AddCampaign extends Controller
     public function index()
     {
         //
+        $kat = Kategori::pluck('kategori');
         $provinces = Province::pluck('name', 'id');
         return view('organisasi.addcampaign', [
-            'provinces' => $provinces
+            'provinces' => $provinces,
+            'kat' => $kat
         ]);
     }
 
@@ -42,15 +45,17 @@ class AddCampaign extends Controller
     public function store(Request $request)
     {
         //
-        $cities = City::where('province_id', $request->get('id'))
-            ->pluck('name', 'id');
-    
-        return response()->json($cities);
+        // set file foto dengan nama baru
+        $poster = time().'.'.$request->poster->extension();
+
+        //path penyimpanan gambar
+        $request->poster->move(public_path('/img/poster'), $poster);
         
         $campaign = new Campaign();
         $campaign->nama_campaign = $request->nama_campaign;
         $campaign->org_id = $request->org_id;
         $campaign->org_name = $request->nama_org;
+        $campaign->provinsi = $request->provinsi;
         $campaign->kabupaten = $request->kabupaten;
         $campaign->kecamatan = $request->kecamatan;
         $campaign->kategori = $request->kategori;
@@ -61,6 +66,7 @@ class AddCampaign extends Controller
         $campaign->deskripsi = $request->deskripsi;
         $campaign->verif_status = $request->verif_status;
         $campaign->campaign_status = $request->campaign_status;
+        $campaign->poster = $poster;
         $campaign->save();
 
         return redirect('/addcampaign');
