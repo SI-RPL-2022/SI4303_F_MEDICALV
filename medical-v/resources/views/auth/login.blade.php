@@ -18,7 +18,7 @@
                 <div class="card-body p-4 p-lg-5 text-black">
                     <form>
                         <div class="d-flex align-items-center mb-3 pb-1">
-                            <i class="fas fa-cubes fa-2x me-3"><img src={{ asset('assets/img/logo/Logo-Medical-V.png') }} width="150"> </i>
+                            <a class="navbar-brand medical-v-color-text" href="/home"><img src="{{ asset('assets/img/logo/Logo-Medical-V.png') }}" alt="logo-navbar" width="150"></a>
                         </div>
                     <br>
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"><b>Login</b></h5>

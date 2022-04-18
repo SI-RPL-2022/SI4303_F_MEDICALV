@@ -7,7 +7,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeCampaign;
 use App\Http\Controllers\AddCampaign;
-use App\Http\Controllers\DependantDropdownController; 
+use App\Http\Controllers\TelusuriCampaignController;
+use App\Http\Controllers\DetailCampaignController;
+use App\Http\Controllers\RegistCampaignController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +23,7 @@ use App\Http\Controllers\DependantDropdownController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 // Route::get('/org/addcampaign', [CampaignController::class, 'index']);
@@ -30,4 +32,6 @@ Route::get('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'register']);
 Route::resource('/org', HomeCampaign::class);
 Route::resource('/addcampaign', AddCampaign::class);
-
+Route::get('/telusuricampaign', [TelusuriCampaignController::class, 'telusuricampaign']);
+Route::get('/detailcampaign', [DetailCampaignController::class, 'detailcampaign']);
+Route::get('/registcampaign', [RegistCampaignController::class, 'registcampaign']);

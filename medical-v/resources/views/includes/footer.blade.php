@@ -1,5 +1,40 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-light posisi-footer" style="background: linear-gradient(90deg, rgba(106, 185, 158, 0.83) 0%, rgba(203, 244, 231, 0.94) 110.24%);">
+<footer class="text-center text-lg-start bg-light" style="background: linear-gradient(90deg, rgba(106, 185, 158, 0.83) 0%, rgba(203, 244, 231, 0.94) 110.24%);">
+    <!-- Section: Social media -->
+        <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+        >
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block" style="color: white">
+            <span>Get connected with us on social networks :</span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div style="color: white">
+            <a href="" class="me-4 text-reset">
+            <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+            <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+            <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+            <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+            <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+            <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <!-- Right -->
+        </section>
+    <!-- Section: Social media -->
+
     <!-- Section: Links  -->
     <section class="">
         <div class="container text-center text-md-start mt-5">
@@ -48,10 +83,10 @@
                 <h6 class="text-uppercase fw-bold mb-4">
                 Contact
                 </h6>
-                <p>JL. Telekomunikasi No. 1 Dayeuhkolot</p>
-                <p>medicalv@gmail.com</p>
-                <p>+62 82775461894</p>
-                <p>+62 82339461748</p>
+                <p><i class="fas fa-home me-3"></i>JL. Telekomunikasi No. 1 Dayeuhkolot</p>
+                <p><i class="fas fa-envelope me-3"></i>medicalv@gmail.com</p>
+                <p><i class="fas fa-phone me-3"></i>+62 82775461894</p>
+                <p><i class="fas fa-print me-3"></i></i>+62 82339461748</p>
             </div>
             <!-- Grid column -->
             </div>
