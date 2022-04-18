@@ -15,6 +15,7 @@ class CreateCampaignsTable extends Migration
     {
         Schema::create('campaigns', function (Blueprint $table) {
             $table->id('id');
+            $table->foreignId('kategori_id');
             $table->string('nama_campaign');
             $table->string('kategori');
             $table->string('org_id');

@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HomeCampaign;
 use App\Http\Controllers\AddCampaign;
+use App\Http\Controllers\KategoriController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,8 @@ Route::get('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'register']);
 Route::resource('/org', HomeCampaign::class);
 Route::resource('/addcampaign', AddCampaign::class);
+Route::resource('/addkategori', KategoriController::class);
+Route::get('/kategori', function() {
+    return view('kategori.index'); 
+});
+Route::resource('/kategori/campaign', KategoriController::class);
