@@ -78,7 +78,12 @@ class KategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $kategori = Campaign::find($id);
+        $kategori->kode_kategori = $request->kategori;
+        $kategori->save();
+
+        return redirect('/org');
+
     }
 
     /**
