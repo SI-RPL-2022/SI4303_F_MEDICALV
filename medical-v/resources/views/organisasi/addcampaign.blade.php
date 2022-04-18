@@ -21,23 +21,18 @@
         <br>
         <label>Lokasi Campaign</label>
         <select name="provinsi" id="province" placeholder="Provinsi">
-                <option value="">Provinsi</option>
+                <option value="">== Pilih Provinsi ==</option>
                 @foreach ($provinces as $id => $name)
-                    <option value="{{ $name }}">{{ $name }}</option>
+                    <option value="{{ $id }}">{{ $name }}</option>
                 @endforeach
         </select>
 
-        <input type="text" name="kabupaten" placeholder="Kabupaten">
-        <input type="text" name="kecamatan" placeholder="Kecamatan">
+        <input type="text" name="kabupaten">
+        <input type="text" name="kecamatan" id="">
         <br>
         <br>
         <label for="kategori">Kategori</label>
-        <select name="kategori" id="kategori" placeholder="Provinsi">
-                <option value="">Kategori</option>
-                @foreach ($kat as $kategori)
-                    <option value="{{ $kategori }}">{{ $kategori }}</option>
-                @endforeach
-        </select>
+        <input type="text" name="kategori">
         <br>
         <br>
         <label for="tgl_mulai">Mulai Campaign</label>
@@ -60,10 +55,10 @@
         <textarea name="deskripsi" id="" cols="30" rows="10"></textarea>
         <br>
         <br>
-        <label for="poster">Poster Campaign</label>
-        <input type="file" name="poster" id="poster">
+        <!-- <label for="poster">Poster Campaign</label>
+        <input type="file" name="poster" id="">
         <br>
-        <br>
+        <br> -->
         <input type="hidden" name="verif_status" value="Belum Terverifikasi">
         <br>
         <br>
@@ -71,6 +66,38 @@
 
         <input type="submit" value="Buat Campaign" name="submit">
     </form>
+    <script>
+        function onChangeSelect(url, id, name) {
+        // send ajax request to get the cities of the selected province and append to the select tag
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: {
+            id: id
+            },
+            success: function (data) {
+            $('#' + name).empty();
+            $('#' + name).append('<option>==Pilih Salah Satu==</option>');
+            $.each(data, function (key, value) {
+                $('#' + name).append('<option value="' + key + '">' + value + '</option>');
+            });
+            }
+        });
+        }
+        $(function () {
+        $('#provinsi').on('change', function () {
+            onChangeSelect('{{ route("cities") }}', $(this).val(), 'kota');
+        });
+        $('#kota').on('change', function () {
+            onChangeSelect('{{ route("districts") }}', $(this).val(), 'kecamatan');
+        })
+        $('#kecamatan').on('change', function () {
+            onChangeSelect('{{ route("villages") }}', $(this).val(), 'desa');
+        })
+        });
+    </script>
+
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>
 

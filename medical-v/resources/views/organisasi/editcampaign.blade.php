@@ -20,23 +20,8 @@
         <input type="text" name="nama_org" value="{{$campaign->org_name}}">
         <br>
         <br>
-        <select name="provinsi" id="province" placeholder="Provinsi">
-                <option value="{{$campaign->provinsi}}">{{$campaign->provinsi}}</option>
-                @foreach ($provinces as $id => $name)
-                    <option value="{{ $name }}">{{ $name }}</option>
-                @endforeach
-        </select>
-        <input type="text" name="kabupaten" value="{{ $campaign->kabupaten }}">
-        <input type="text" name="kecamatan" value="{{ $campaign->kecamatan }}">
-        <br>
-        <br>
         <label for="kategori">Kategori</label>
-        <select name="kategori" id="kategori" placeholder="Provinsi">
-                <option value="{{ $campaign->kategori }}">{{ $campaign->kategori }}</option>
-                @foreach ($kat as $kategori)
-                    <option value="{{ $kategori }}">{{ $kategori }}</option>
-                @endforeach
-        </select>
+        <input type="text" name="kategori" value="{{$campaign->kategori}}">
         <br>
         <br>
         <label for="tgl_mulai">Mulai Campaign</label>

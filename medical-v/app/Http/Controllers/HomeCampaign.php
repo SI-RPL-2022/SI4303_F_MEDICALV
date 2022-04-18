@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Campaign;
-use App\Models\Kategori;
-use Laravolt\Indonesia\Models\Province;
 
 class HomeCampaign extends Controller
 {
@@ -64,12 +62,7 @@ class HomeCampaign extends Controller
     {
         //
         $campaign = Campaign::find($id);
-        $provinces = Province::pluck('name', 'id');
-        $kategori = Kategori::pluck('kategori');
-        return view('organisasi.editcampaign', compact('campaign'), [
-            'provinces' => $provinces,
-            'kat' => $kategori
-        ]);
+        return view('organisasi.editcampaign', compact('campaign'));
     }
 
     /**
