@@ -19,6 +19,9 @@ class CreateCampaignsTable extends Migration
             $table->string('kategori');
             $table->string('org_id');
             $table->string('org_name');
+            $table->string('provinsi');
+            $table->string('kabupaten');
+            $table->string('kecamatan');
             $table->date('tgl_mulai_campaign');
             $table->date('tgl_selesai_campaign');
             $table->date('tgl_mulai_pendaftaran');
@@ -26,6 +29,7 @@ class CreateCampaignsTable extends Migration
             $table->string('deskripsi');
             $table->string('verif_status');
             $table->string('campaign_status');
+            $table->string('poster');
 
             // $table->foreign('org_id')->references('id_organisasi')->on('org_accounts');
         });
