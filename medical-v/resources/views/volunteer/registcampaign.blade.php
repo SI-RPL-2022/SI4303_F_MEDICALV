@@ -42,20 +42,22 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="card">
-                    <img src="{{ asset('assets/img/unsplash/kids-health.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><b>Nama Campaign</b></h5>
-                        <button type="button" class="btn btn-sm btn-outline-success mt-3" disabled>Anak-Anak</button>
-                        <p class="card-text mt-4">
-                            <i class="fa-solid fa-circle"></i>  Kab. Banyumas, Jawa Tengah
-                        </p>
-                        <p class="card-text">
-                            <i class="fa-solid fa-circle"></i>  12 April - 12 Mei 2022
-                        </p>
-                        <p class="card-text mt-5" style="color: red"><b>Pendaftaran dibuka hingga 7 April</b></p>
+                @foreach ($campaign as $row)
+                    <div class="card">
+                        <img src="/img/poster/{{ $row->poster }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>{{ $row->nama_campaign }}</b></h5>
+                            <button type="button" class="btn btn-sm btn-outline-success mt-3" disabled>{{ $row->kategori }}</button>
+                            <p class="card-text mt-4">
+                                <i class="fa-solid fa-circle"></i>  {{ $row->kabupaten }}, {{ $row->provinsi }}
+                            </p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-circle"></i> Pelaksanaan campaign :  {{ $row->tgl_mulai_campaign }} s/d {{ $row->tgl_selesai_campaign }}
+                            </p>
+                            <p class="card-text mt-5" style="color: red"><b>Pendaftaran dibuka hingga {{ $row->tgl_selesai_pendaftaran }}</b></p>
+                        </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

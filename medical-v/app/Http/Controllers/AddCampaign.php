@@ -66,7 +66,7 @@ class AddCampaign extends Controller
         $campaign->deskripsi = $request->deskripsi;
         $campaign->verif_status = $request->verif_status;
         $campaign->campaign_status = $request->campaign_status;
-        $campaign->poster = $poster;
+        $campaign->poster = $poster; 
         $campaign->save();
 
         return redirect('/addcampaign');
