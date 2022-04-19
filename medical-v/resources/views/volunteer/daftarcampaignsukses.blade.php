@@ -21,7 +21,7 @@
                     <p>
                         <i class="fa-solid fa-circle"></i>  Sumenep Health Care
                     </p>
-                    <a href="#" class="btn btn-lg medical-v-color-background mt-5" style="color: white; width: 100%">Lihat Campain Saya</a>
+                    <a href="/campaignsaya" class="btn btn-lg medical-v-color-background mt-5" style="color: white; width: 100%">Lihat Campain Saya</a>
                 </div>
             </div>
     </div>

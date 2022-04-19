@@ -11,6 +11,7 @@ use App\Http\Controllers\DetailCampaignController;
 use App\Http\Controllers\RegistCampaignController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DaftarCampaignSuksesController;
+use App\Http\Controllers\CampaignSayaController;
 
 
 /*
@@ -43,3 +44,4 @@ Route::get('/kategori', function() {
     return view('kategori.index'); 
 });
 Route::resource('/kategori/campaign', KategoriController::class);
+Route::get('/campaignsaya', [CampaignSayaController::class, 'campaignsaya']);
