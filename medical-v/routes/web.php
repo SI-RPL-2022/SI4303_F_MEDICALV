@@ -41,3 +41,6 @@ Route::get('/kategori', function() {
     return view('kategori.index'); 
 });
 Route::resource('/kategori/campaign', KategoriController::class);
+Route::get('/orgtemplate', function () {
+    return view('organisasi.layout.layout');
+});
