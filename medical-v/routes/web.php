@@ -10,6 +10,7 @@ use App\Http\Controllers\TelusuriCampaignController;
 use App\Http\Controllers\DetailCampaignController;
 use App\Http\Controllers\RegistCampaignController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\DaftarCampaignSuksesController;
 
 
 /*
@@ -34,8 +35,9 @@ Route::get('/register', [RegisterController::class, 'register']);
 Route::resource('/org', HomeCampaign::class);
 Route::resource('/addcampaign', AddCampaign::class);
 Route::get('/telusuricampaign', [TelusuriCampaignController::class, 'telusuricampaign']);
-Route::get('/detailcampaign', [DetailCampaignController::class, 'detailcampaign']);
-Route::get('/registcampaign', [RegistCampaignController::class, 'registcampaign']);
+Route::get('/detailcampaign/{id}', [DetailCampaignController::class, 'detailcampaign']);
+Route::get('/registcampaign/{id}', [RegistCampaignController::class, 'registcampaign']);
+Route::get('/daftarcampaignsukses', [DaftarCampaignSuksesController::class, 'daftarcampaignsukses']);
 Route::resource('/addkategori', KategoriController::class);
 Route::get('/kategori', function() {
     return view('kategori.index'); 

@@ -97,15 +97,3 @@
     top: 90.23%;
     bottom: 8.16%; 
 } */
-
-.hero-image {
-    background: linear-gradient(90.2deg, #6AB99E 0.14%, rgba(203, 244, 231, 0.7) 99.81%), url("kids-heroes.jpg");
-      /* Set a specific height */
-    height: 50%;
-
-    /* Position and center the image to scale nicely on all screens */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
