@@ -45,3 +45,6 @@ Route::get('/kategori', function() {
 });
 Route::resource('/kategori/campaign', KategoriController::class);
 Route::get('/campaignsaya', [CampaignSayaController::class, 'campaignsaya']);
+Route::get('/orgtemplate', function () {
+    return view('organisasi.layout.layout');
+});
