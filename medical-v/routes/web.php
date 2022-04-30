@@ -48,3 +48,13 @@ Route::get('/campaignsaya', [CampaignSayaController::class, 'campaignsaya']);
 Route::get('/orgtemplate', function () {
     return view('organisasi.layout.layout');
 });
+
+Route::get('/', [App\Http\Controllers\Auth::class,'login'])->name('auth.login');
+
+Route::get('/register', [App\Http\Controllers\Auth::class,'register']);
+Route::post('/register', [App\Http\Controllers\Auth::class,'prosesRegister']);
+Route::get('/login', [App\Http\Controllers\Auth::class,'login']);
+Route::post('/login', [App\Http\Controllers\Auth::class,'prosesLogin']);
+Route::get('/logout', [App\Http\Controllers\Auth::class,'logout']);
+
+Route::get('/dashboard', [App\Http\Controllers\Dashboard::class,'index'])->name('dashboard')->middleware('login');
