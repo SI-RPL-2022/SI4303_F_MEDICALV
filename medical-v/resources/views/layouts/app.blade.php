@@ -4,7 +4,6 @@
     @include('includes.meta')
     <title>@yield('title') | Medical-V</title>
 
-    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/logo/title-icon.png') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
 
