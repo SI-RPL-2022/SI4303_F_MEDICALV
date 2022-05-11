@@ -12,6 +12,11 @@
     @include('includes.header')
             
     <div class="container mt-3 mx-auto py-3 mb-5">
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
         @yield('content')
     </div>
 

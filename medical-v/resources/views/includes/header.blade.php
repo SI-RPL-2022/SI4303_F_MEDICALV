@@ -19,10 +19,16 @@
             @auth
                 <ul class="navbar-nav me-5">
                     <li class="nav-item">
-                        <a class="nav-link font-nav posisi-nav-campaign mt-2 inline" href="#" style="color: black">Campaign Saya</a>
+                        <a class="nav-link font-nav posisi-nav-campaign mt-2 inline" href="/campaignsaya" style="color: black">Campaign Saya</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link posisi-profile-header" href="#" style="color: black"><img src="{{ asset('assets/img/icon/profile.png') }}" alt="icon-profile"></a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/logout" method="post">
+                            @csrf
+                            <button type="submit" class="nav-link border-0" style="color: black">Logout</button>
+                        </form>
                     </li>
                 </ul>
             @endauth

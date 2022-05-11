@@ -22,7 +22,11 @@
                         <i class="fa-solid fa-circle"></i>  {{ $row->org_name }}
                     </p>
                     <p class="mt-5" style="color: red"><b>Pendaftaran dibuka hingga {{ $row->tgl_selesai_pendaftaran }}</b></p>
-                    <a href="/registcampaign/{{ $row->id }}" class="btn btn-lg medical-v-color-background" style="color: white">Daftar Campaign</a>
+                    <form action="/daftarcampaignsukses/{{ $row->id }}" method="post">
+                        @csrf
+                        @method('put')
+                        <button type="submit" class="btn btn-lg medical-v-color-background" style="color: white">Daftar Campaign</button>
+                    </form>
                 </div>
             </div>
             <hr class="mt-4">

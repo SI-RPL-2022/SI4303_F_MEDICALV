@@ -12,7 +12,7 @@ class RegistCampaignController extends Controller
     //
     public function registcampaign($id){
         return view('volunteer/registcampaign',[
-            'campaign'=>Campaign::where('id',$id)->get()
+            'campaign'=>Campaign::where('id',$id)->first()
         ]);
     }
 }

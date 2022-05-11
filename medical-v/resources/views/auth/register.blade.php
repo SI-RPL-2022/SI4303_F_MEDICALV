@@ -16,38 +16,67 @@
                 </div>
                 <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
-                    <form>
+                    <form action="register" method="POST">
+                        @csrf
                         <div class="d-flex align-items-center mb-3 pb-1">
                             <a class="navbar-brand medical-v-color-text" href="/home"><img src="{{ asset('assets/img/logo/Logo-Medical-V.png') }}" alt="logo-navbar" width="150"></a>
                         </div>
                     <br>
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"><b>Daftar</b></h5>
                     <div class="form-outline mb-4">
-                        <label class="form-label" for="nama">Nama</label>
-                        <input type="text" id="nama" class="form-control form-control-lg" />
+                        <label class="form-label" for="name">Nama</label>
+                        <input type="text" name="name" id="name" class="form-control form-control-lg @error('name') is-invalid @enderror" value="{{ old('name') }}" />
+                        @error('name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-outline mb-4">
                         <label class="form-label" for="email">Email</label>
-                        <input type="email" id="email" class="form-control form-control-lg" />
+                        <input type="email" name="email" id="email" class="form-control form-control-lg  @error('email') is-invalid @enderror"  value="{{ old('email') }}" />
+                        @error('email')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-outline mb-4">
-                        <label class="form-label" for="tgl">Tanggal Lahir</label>
-                        <input type="date" id="tgl" class="form-control form-control-lg" />
+                        <label class="form-label" for="phone_number">Nomor Handphone</label>
+                        <input type="text" name="phone_number" id="phone_number" class="form-control form-control-lg @error('phone_number') is-invalid @enderror" value="{{ old('phone_number') }}" />
+                        @error('phone_number')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-outline mb-4">
-                        <label class="form-label" for="gender">Jenis Kelamin</label>
-                        <input type="text" id="gender" class="form-control form-control-lg" />
+                        <label class="form-label" for="address">Alamat</label>
+                        <input type="text" name="address" id="address" class="form-control form-control-lg @error('address') is-invalid @enderror" value="{{ old('address') }}" />
+                        @error('address')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="birth">Tanggal Lahir</label>
+                        <input type="date" name="birth" id="birth" class="form-control form-control-lg @error('birth') is-invalid @enderror" value="{{ old('date') }}" />
+                        @error('birth')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="sex">Jenis Kelamin</label>
+                        <select class="form-select @error('sex') is-invalid @enderror" name="sex" aria-label="Default select example">
+                            <option selected value="0">Laki-Laki</option>
+                            <option value="1">Perempuan</option>
+                        </select>
+                        @error('sex')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-outline mb-4">
                         <label class="form-label" for="password">Password</label>
-                        <input type="password" id="password" class="form-control form-control-lg" />
-                    </div>
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="konfirm_password">Konfirmasi Password</label>
-                        <input type="password" id="konfirm_password" class="form-control form-control-lg" />
+                        <input type="password" name="password" id="password" class="form-control form-control-lg @error('password') is-invalid @enderror" />
+                        @error('password')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="pt-1 mb-4">
-                        <button class="btn btn-lg medical-v-color-background" type="button" style="color: white">Daftar</button>
+                        <button class="btn btn-lg medical-v-color-background" type="submit" style="color: white">Daftar</button>
                     </div>
                     <p class="mb-5 pb-lg-2 medical-v-color-text">Sudah punya akun?
                         <a class="medical-v-color-text" href="/login">Login disini</a>

@@ -8,19 +8,25 @@
         <div class="row mt-5">
             <div class="col-sm-4">
                 <div class="card">
-                    <img src="{{ asset('assets/img/unsplash/kids-health.jpg') }}" alt="...">
+                    @if(auth()->user()->campaign_id != null)
+                    <img src="{{ asset('/img/poster/'.$campaign->poster) }}" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title"><b>Nama Campaign</b></h5>
-                        <button type="button" class="btn btn-sm btn-outline-success mt-3" disabled>Anak-anak</button>
+                        <h5 class="card-title"><b>{{ $campaign->nama_campaign }}</b></h5>
+                        <button type="button" class="btn btn-sm btn-outline-success mt-3" disabled>{{ $campaign->kategori }}</button>
                         <p class="card-text mt-4">
-                            <i class="fa-solid fa-circle"></i>  Kab. Sumenep, Jawa Timur
+                            <i class="fa-solid fa-circle"></i>  {{ $campaign->kabupaten }}, {{ $campaign->provinsi }}
                         </p>
                         <p class="card-text">
-                            <i class="fa-solid fa-circle"></i> Pelaksanaan campaign :  12 April - 12 Mei 2022
+                            <i class="fa-solid fa-circle"></i> Pelaksanaan campaign :  {{ $campaign->tgl_mulai_campaign }} s/d {{ $campaign->tgl_selesai_campaign }}
                         </p>
-                        <p class="card-text medical-v-color-text mt-5">
-                            Sedang diikuti
-                        </p>
+                        <form action="campaignsaya" method="post">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-danger mt-5">Berhenti dari Campaign</button>
+                        </form>
+                        @else
+                        <div></div>
+                        @endif
                     </div>
                 </div>
             </div>

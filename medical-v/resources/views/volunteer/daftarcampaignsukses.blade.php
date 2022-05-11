@@ -3,25 +3,29 @@
 @section('title', 'Detail Campaign')
 
 @section('content')
+    @if($errors->any())
+    <div class="alert alert-success">
+        {{$msg}}
+    </div>    
+    @endif
     <div class="container mt-4">
             <div class="row">
-                <h1 class="mb-5"><b>Pendaftaran Campaign Berhasil!</b></h1>
                 <div class="col">
-                    <img src="{{ asset('assets/img/unsplash/kids-health.jpg') }}" style="width: 100%">
+                    <img src="{{ asset('img/poster/'.$campaign->poster) }}" style="width: 100%">
                 </div>
                 <div class="col">
-                    <h2><b>Nama Campaign</b></h2>
-                    <button type="button" class="btn btn-sm btn-outline-success mt-3" disabled>Anak-anak</button>
+                    <h2><b>{{ $campaign->nama_campaign }}</b></h2>
+                    <button type="button" class="btn btn-sm btn-outline-success mt-3" disabled>{{ $campaign->kategori }}</button>
                     <p class="mt-5">
-                        <i class="fa-solid fa-circle"></i>  Kab. Sumenep, Jawa Timur
+                        <i class="fa-solid fa-circle"></i>  {{ $campaign->kabupaten }}
                     </p>
                     <p>
-                        <i class="fa-solid fa-circle"></i> Pelaksanaan campaign :  12 April - 12 Mei 2022
+                        <i class="fa-solid fa-circle"></i> Pelaksanaan campaign :  {{ $campaign->tgl_mulai_campaign }} s/d {{ $campaign->tgl_selesai_campaign }}
                     </p>
                     <p>
-                        <i class="fa-solid fa-circle"></i>  Sumenep Health Care
+                        <i class="fa-solid fa-circle"></i>  {{ $campaign->org_name }}
                     </p>
-                    <a href="/campaignsaya" class="btn btn-lg medical-v-color-background mt-5" style="color: white; width: 100%">Lihat Campain Saya</a>
+                    <a href="/campaignsaya" class="btn btn-lg medical-v-color-background mt-5" style="color: white; width: 100%">Lihat Campaign Saya</a>
                 </div>
             </div>
     </div>

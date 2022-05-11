@@ -10,4 +10,9 @@ class Campaign extends Model
     use HasFactory;
     public $timestamps = false;
     protected $guarded = ['id'];
+
+    public function user(){
+        return $this->hasMany(User::class);
+    }
 }
+

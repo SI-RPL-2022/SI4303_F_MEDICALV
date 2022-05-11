@@ -31,20 +31,25 @@ Route::get('/', function () {
 
 // Route::get('/org/addcampaign', [CampaignController::class, 'index']);
 Route::get('/home', [HomeController::class, 'home']);
-Route::get('/login', [LoginController::class, 'login']);
-Route::get('/register', [RegisterController::class, 'register']);
+Route::get('/login', [LoginController::class, 'login'])->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+Route::get('/register', [RegisterController::class, 'register'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'regist']);
 Route::resource('/org', HomeCampaign::class);
 Route::resource('/addcampaign', AddCampaign::class);
 Route::get('/telusuricampaign', [TelusuriCampaignController::class, 'telusuricampaign']);
 Route::get('/detailcampaign/{id}', [DetailCampaignController::class, 'detailcampaign']);
 Route::get('/registcampaign/{id}', [RegistCampaignController::class, 'registcampaign']);
 Route::get('/daftarcampaignsukses', [DaftarCampaignSuksesController::class, 'daftarcampaignsukses']);
+Route::put('/daftarcampaignsukses/{id}', [DaftarCampaignSuksesController::class, 'storedaftarcampaignsukses']);
 Route::resource('/addkategori', KategoriController::class);
 Route::get('/kategori', function() {
     return view('kategori.index'); 
 });
 Route::resource('/kategori/campaign', KategoriController::class);
-Route::get('/campaignsaya', [CampaignSayaController::class, 'campaignsaya']);
+Route::get('/campaignsaya', [DaftarCampaignSuksesController::class, 'campaignsaya']);
+Route::delete('/campaignsaya', [DaftarCampaignSuksesController::class, 'deletecampaignsaya']);
 Route::get('/orgtemplate', function () {
     return view('organisasi.layout.layout');
 });
