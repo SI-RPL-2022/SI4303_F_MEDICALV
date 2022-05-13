@@ -12,6 +12,7 @@ use App\Http\Controllers\RegistCampaignController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DaftarCampaignSuksesController;
 use App\Http\Controllers\CampaignSayaController;
+use App\Http\Controllers\CampaignAdminController;
 
 
 /*
@@ -58,3 +59,9 @@ Route::post('/login', [App\Http\Controllers\Auth::class,'prosesLogin']);
 Route::get('/logout', [App\Http\Controllers\Auth::class,'logout']);
 
 Route::get('/dashboard', [App\Http\Controllers\Dashboard::class,'index'])->name('dashboard')->middleware('login');
+
+Route::get('/dashboardadmin', [CampaignAdminController::class, 'index']);
+Route::get('/create', [CampaignAdminController::class, 'create']);
+Route::post('/store', [CampaignAdminController::class, 'store']);
+Route::get('/show/{id}', [CampaignAdminController::class, 'show']);
+Route::post('/update/{id}', [CampaignAdminController::class, 'update']);
