@@ -1,0 +1,2 @@
+<button type="button" class="btn btn-custom" style="background-color: aquamarine" data-bs-dismiss="modal">Close</button>
+<button type="button" class="btn btn-danger" onclick="destroy({{ $data->kode_kategori }})">Hapus</button>
