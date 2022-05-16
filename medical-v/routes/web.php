@@ -12,6 +12,7 @@ use App\Http\Controllers\RegistCampaignController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DaftarCampaignSuksesController;
 use App\Http\Controllers\CampaignSayaController;
+use App\Http\Controllers\CampaignAdminController;
 
 
 /*
@@ -66,3 +67,18 @@ Route::get('/show/{kode_kategori}', [KategoriController::class, 'show']);
 Route::get('/update/{kode_kategori}', [KategoriController::class, 'update']);
 Route::get('/hapus/{kode_kategori}', [KategoriController::class, 'hapus']);
 Route::get('/destroy/{kode_kategori}', [KategoriController::class, 'destroy']);
+Route::get('/', [App\Http\Controllers\Auth::class,'login'])->name('auth.login');
+
+Route::get('/register', [App\Http\Controllers\Auth::class,'register']);
+Route::post('/register', [App\Http\Controllers\Auth::class,'prosesRegister']);
+Route::get('/login', [App\Http\Controllers\Auth::class,'login']);
+Route::post('/login', [App\Http\Controllers\Auth::class,'prosesLogin']);
+Route::get('/logout', [App\Http\Controllers\Auth::class,'logout']);
+
+Route::get('/dashboard', [App\Http\Controllers\Dashboard::class,'index'])->name('dashboard')->middleware('login');
+
+Route::get('/dashboardadmin', [CampaignAdminController::class, 'index']);
+Route::get('/create', [CampaignAdminController::class, 'create']);
+Route::post('/store', [CampaignAdminController::class, 'store']);
+Route::get('/show/{id}', [CampaignAdminController::class, 'show']);
+Route::post('/update/{id}', [CampaignAdminController::class, 'update']);

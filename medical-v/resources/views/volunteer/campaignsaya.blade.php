@@ -22,7 +22,8 @@
                         <form action="campaignsaya" method="post">
                             @csrf
                             @method('delete')
-                            <button type="submit" class="btn btn-danger mt-5">Berhenti dari Campaign</button>
+                            <a href="" class="btn btn-primary">Tulis Laporan</a>
+                            <button type="submit" class="btn btn-outline-danger mt-5">Berhenti dari Campaign</button>
                         </form>
                         @else
                         <div></div>
