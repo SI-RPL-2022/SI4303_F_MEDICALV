@@ -29,6 +29,7 @@ Route::get('/', function () {
     return view('home');
 });
 
+
 // Route::get('/org/addcampaign', [CampaignController::class, 'index']);
 Route::get('/home', [HomeController::class, 'home']);
 Route::get('/login', [LoginController::class, 'login'])->middleware('guest');
@@ -53,3 +54,15 @@ Route::delete('/campaignsaya', [DaftarCampaignSuksesController::class, 'deleteca
 Route::get('/orgtemplate', function () {
     return view('organisasi.layout.layout');
 });
+
+Route::resource('/kategori/campaign', KategoriController::class);
+
+//Category Using AJAX Request
+Route::get('kategori', [kategoriController::class, 'index'])->name('category.index');
+Route::get('read', [KategoriController::class, 'read']);
+Route::get('create', [KategoriController::class, 'create']);
+Route::get('store', [KategoriController::class, 'store']);
+Route::get('/show/{kode_kategori}', [KategoriController::class, 'show']);
+Route::get('/update/{kode_kategori}', [KategoriController::class, 'update']);
+Route::get('/hapus/{kode_kategori}', [KategoriController::class, 'hapus']);
+Route::get('/destroy/{kode_kategori}', [KategoriController::class, 'destroy']);

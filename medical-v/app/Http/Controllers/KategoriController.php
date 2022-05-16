@@ -2,98 +2,59 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\kategori;
+
+use App\Models\Kategori;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class KategoriController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-    //     return kategori::where('kode_kategori', auth()->user()->id)->get();
-    //    return view('kategori.kategori.index', [
-    //        'post'=> kategori::all()
-
-    //    ]);
-    return view('kategori.addkategori');
+    $categories = Kategori::all();
+        return view('kategori.index', compact('categories'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function read()
+    {
+        $data = Kategori::all();
+        return view('kategori.read', compact('data'));
+    }
+
     public function create()
     {
-        //
+        return view('kategori.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        $kategori = new Kategori();
-        $kategori->kategori = $request->kategori;
-        $kategori->save();
-
-        return redirect('/addkategori');
+        $data['kategori'] = $request->kategori;
+        Kategori::insert($data);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show($kode_kategori)
     {
-        //
+        $data = Kategori::findOrFail($kode_kategori);
+        return view('kategori.edit', compact('data'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function update(Request $request, $kode_kategori)
     {
-        //
+        $data = Kategori::findOrFail($kode_kategori);
+        $data->kategori = $request->kategori;
+        $data->save();
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function hapus($kode_kategori)
     {
-        $kategori = Campaign::find($id);
-        $kategori->kode_kategori = $request->kategori;
-        $kategori->save();
-
-        return redirect('/org');
-
+        $data = Kategori::findOrFail($kode_kategori);
+        return view('kategori.hapus', compact('data'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy($kode_kategori)
     {
-        //
+        $data = Kategori::findOrFail($kode_kategori);
+        $data->delete();
     }
 }
