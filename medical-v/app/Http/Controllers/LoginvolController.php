@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
+class LoginvolController extends Controller
 {
     //
-    public function login(){
-        return view('auth/login');
+    public function loginvol(){
+        return view('auth/loginvol');
     }
     public function authenticate(Request $request){
         $credentials = $request->validate([
@@ -29,6 +29,6 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('login')->with('status','Logout Berhasil');
+        return redirect('loginvol')->with('status','Logout Berhasil');
     }
 }

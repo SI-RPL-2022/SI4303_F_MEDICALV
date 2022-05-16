@@ -34,8 +34,8 @@
             @endauth
             @guest
                 <ul class="navbar-nav me-5">
-                    <a class="btn btn-lg medical-v-color-background" href="/register" style="color: white">Daftar</a>
-                    <a class="btn btn-lg btn-outline-success mx-3" href="/login">Login</a>
+                    <a class="btn btn-lg medical-v-color-background" href="/registervol" style="color: white">Daftar</a>
+                    <a class="btn btn-lg btn-outline-success mx-3" href="/loginvol">Login</a>
                 </ul>
             @endguest
         </div>

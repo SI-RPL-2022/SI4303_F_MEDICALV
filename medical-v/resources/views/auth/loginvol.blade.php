@@ -12,7 +12,7 @@
                 <div class="row g-0">
                 <div class="col-md-6 col-lg-5 d-none d-md-block">
                     <img src={{ asset('assets/img/unsplash/orang-login.jpg') }}
-                    alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                    alt="loginvol form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
                 </div>
                 <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
@@ -21,7 +21,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form action="login" method="POST">
+                    <form action="loginvol" method="POST">
                         @csrf
                         <div class="d-flex align-items-center mb-3 pb-1">
                             <a class="navbar-brand medical-v-color-text" href="/home"><img src="{{ asset('assets/img/logo/Logo-Medical-V.png') }}" alt="logo-navbar" width="150"></a>
