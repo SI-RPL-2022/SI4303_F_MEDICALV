@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginvolController;
+use App\Http\Controllers\LaporanCampaign;
 use App\Http\Controllers\RegistervolController;
 use App\Http\Controllers\HomeCampaign;
 use App\Http\Controllers\AddCampaign;
@@ -82,3 +83,6 @@ Route::get('/create', [CampaignAdminController::class, 'create']);
 Route::post('/store', [CampaignAdminController::class, 'store']);
 Route::get('/show/{id}', [CampaignAdminController::class, 'show']);
 Route::post('/update/{id}', [CampaignAdminController::class, 'update']);
+
+Route::resource('/laporan', LaporanCampaign::class);
+
