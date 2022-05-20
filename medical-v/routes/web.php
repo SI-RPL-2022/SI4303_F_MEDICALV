@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginvolController;
 use App\Http\Controllers\LaporanCampaign;
+use App\Http\Controllers\RegistervolController;
 use App\Http\Controllers\HomeCampaign;
 use App\Http\Controllers\AddCampaign;
 use App\Http\Controllers\TelusuriCampaignController;
@@ -34,11 +34,11 @@ Route::get('/', function () {
 
 // Route::get('/org/addcampaign', [CampaignController::class, 'index']);
 Route::get('/home', [HomeController::class, 'home']);
-Route::get('/login', [LoginController::class, 'login'])->middleware('guest');
-Route::post('/login', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout']);
-Route::get('/register', [RegisterController::class, 'register'])->middleware('guest');
-Route::post('/register', [RegisterController::class, 'regist']);
+Route::get('/loginvol', [LoginvolController::class, 'loginvol'])->middleware('guest');
+Route::post('/loginvol', [LoginvolController::class, 'authenticate']);
+Route::post('/logout', [LoginvolController::class, 'logout']);
+Route::get('/registervol', [RegistervolController::class, 'registervol'])->middleware('guest');
+Route::post('/registervol', [RegistervolController::class, 'registvol']);
 Route::resource('/org', HomeCampaign::class);
 Route::resource('/addcampaign', AddCampaign::class);
 Route::get('/telusuricampaign', [TelusuriCampaignController::class, 'telusuricampaign']);

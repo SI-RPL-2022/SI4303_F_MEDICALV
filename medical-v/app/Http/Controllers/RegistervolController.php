@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+class RegistervolController extends Controller
 {
     //
-    public function register(){
-        return view('auth/register');
+    public function registervol(){
+        return view('auth/registervol');
     }
-    public function regist(Request $request){
+    public function registvol(Request $request){
 
         $request->validate([
             'name' => 'required',
@@ -40,6 +40,6 @@ class RegisterController extends Controller
         //     'address' => $request->address,
         //     'sex' => $request->sex,
         // ]);
-        return redirect('login')->with('status', 'Registrasi Berhasil!');
+        return redirect('loginvol')->with('status', 'Registrasi Berhasil!');
     }
 }
