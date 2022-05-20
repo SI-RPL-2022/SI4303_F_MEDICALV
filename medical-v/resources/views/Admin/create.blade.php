@@ -85,7 +85,7 @@
 
     <div class="form-group mb-3">
         <a href="{{ url('/') }}">
-            << Kembali ke halaman utama
+            << Kembali ke halaman utama >>
         </a>
     </div>
 </form>

@@ -14,6 +14,7 @@ class LaporanCampaign extends Controller
     public function index()
     {
         //
+        return view('volunteer.uploadlaporan');
     }
 
     /**
