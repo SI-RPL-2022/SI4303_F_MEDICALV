@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginvolController;
 use App\Http\Controllers\LaporanCampaign;
 use App\Http\Controllers\RegistervolController;
 use App\Http\Controllers\HomeCampaign;
+use App\Http\Controllers\OrgReport;
 use App\Http\Controllers\AddCampaign;
 use App\Http\Controllers\TelusuriCampaignController;
 use App\Http\Controllers\DetailCampaignController;
@@ -84,7 +85,8 @@ Route::post('/store', [CampaignAdminController::class, 'store']);
 Route::get('/show/{id}', [CampaignAdminController::class, 'show']);
 Route::post('/update/{id}', [CampaignAdminController::class, 'update']);
 
-Route::resource('/laporan', LaporanCampaign::class);
+Route::resource('/uploadlaporan', LaporanCampaign::class);
+Route::get('/orgreport', [OrgReport::class, 'index']);
 
 //volunteer
 Route::get('/volunteer', [VolunteerController::class, 'index']);

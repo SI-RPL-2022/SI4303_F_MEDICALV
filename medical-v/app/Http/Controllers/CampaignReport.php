@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\CampaignReport;
+
+
 use Illuminate\Http\Request;
 
-class LaporanCampaign extends Controller
+class CampaignReport extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,19 +37,7 @@ class LaporanCampaign extends Controller
     public function store(Request $request)
     {
         //
-        // set file foto dengan nama baru
-        $docs = time().'.'.$request->dokumen->extension();
-
-        //path penyimpanan gambar
-        $request->dokumen->move(public_path('/docs'), $docs);
         
-        $report = new CampaignReport();
-        $report->user_id = $request->user_id;
-        $report->campaign_id = $request->campaign_id;
-        $report->path = $docs; 
-        $report->save();
-
-        return redirect('/uploadlaporan');
     }
 
     /**
