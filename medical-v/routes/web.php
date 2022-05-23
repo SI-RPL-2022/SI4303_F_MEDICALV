@@ -86,3 +86,5 @@ Route::post('/update/{id}', [CampaignAdminController::class, 'update']);
 
 Route::resource('/laporan', LaporanCampaign::class);
 
+//volunteer
+Route::get('/volunteer', [VolunteerController::class, 'index']);

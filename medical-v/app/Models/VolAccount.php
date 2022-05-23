@@ -9,4 +9,7 @@ class VolAccount extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    protected $table = 'vol_accounts';
+    protected $guarded = [];
 }
