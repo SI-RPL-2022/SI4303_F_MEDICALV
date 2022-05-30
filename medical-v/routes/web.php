@@ -50,7 +50,7 @@ Route::get('/orgtemplate', function () {
     return view('organisasi.layout.layout');
 });
 
-Route::get('/', [App\Http\Controllers\Auth::class,'login'])->name('auth.login');
+Route::get('/loginorganisasi', [App\Http\Controllers\Auth::class,'login'])->name('auth.login');
 
 Route::get('/register', [App\Http\Controllers\Auth::class,'register']);
 Route::post('/register', [App\Http\Controllers\Auth::class,'prosesRegister']);
