@@ -40,6 +40,6 @@ class RegistervolController extends Controller
         //     'address' => $request->address,
         //     'sex' => $request->sex,
         // ]);
-        return redirect('loginvol')->with('status', 'Registrasi Berhasil!');
+        return redirect('/loginvol')->with('status', 'Registrasi Berhasil!');
     }
 }

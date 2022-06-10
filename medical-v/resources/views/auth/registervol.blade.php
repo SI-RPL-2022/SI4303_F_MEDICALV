@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
-                    <form action="register" method="POST">
+                    <form action="registervol" method="POST">
                         @csrf
                         <div class="d-flex align-items-center mb-3 pb-1">
                             <a class="navbar-brand medical-v-color-text" href="/home"><img src="{{ asset('assets/img/logo/Logo-Medical-V.png') }}" alt="logo-navbar" width="150"></a>
