@@ -33,8 +33,18 @@
         </div>
         <div class="sidebar-body">
           <ul class="navigation-list">
+          <li class="navigation-list-item">
+              <a class="navigation-link" href="">
+                <div class="row">
+                  <div class="col-2">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </div>
+                  <div class="col-10">Dashboard</div>
+                </div>
+              </a>
+            </li>
             <li class="navigation-list-item">
-              <a class="navigation-link" href="/dashboardadmin">
+              <a class="navigation-link" href="/indexdaftarcampaignadmin">
                 <div class="row">
                   <div class="col-2">
                     <i class="fa-solid fa-circle-plus"></i>
@@ -44,22 +54,22 @@
               </a>
             </li>
             <li class="navigation-list-item">
-              <a class="navigation-link" href="">
+              <a class="navigation-link" href="/daftarorganisasiadmin">
+                <div class="row">
+                  <div class="col-2">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </div>
+                  <div class="col-10">Daftar Organisasi</div>
+                </div>
+              </a>
+            </li>
+            <li class="navigation-list-item">
+              <a class="navigation-link" href="/daftarvolunteeradmin">
                 <div class="row">
                   <div class="col-2">
                     <i class="fa-solid fa-circle-plus"></i>
                   </div>
                   <div class="col-10">Daftar Volunteer</div>
-                </div>
-              </a>
-            </li>
-            <li class="navigation-list-item">
-              <a class="navigation-link" href="">
-                <div class="row">
-                  <div class="col-2">
-                    <i class="fa-solid fa-circle-plus"></i>
-                  </div>
-                  <div class="col-10">Web Statistik</div>
                 </div>
               </a>
             </li>

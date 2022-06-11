@@ -15,7 +15,7 @@ class CampaignAdminController extends Controller
     public function index()
     {
         $data = campaignadmin::all();
-        return view('/Admin/index')->with([
+        return view('/Admin/indexdaftarcampaignadmin')->with([
             'data' => $data
         ]);
     }
@@ -40,7 +40,7 @@ class CampaignAdminController extends Controller
     {
         $data = $request->except(['_token']);
         campaignadmin::insert($data);
-        return redirect('/dashboardadmin');
+        return redirect('/indexdaftarcampaignadmin');
     }
 
     /**
@@ -80,7 +80,7 @@ class CampaignAdminController extends Controller
         $item = campaignadmin::findOrFail($id);
         $data = $request->except(['_token']);
         $item->update($data);
-        return redirect('/dashboardadmin');
+        return redirect('/indexdaftarcampaignadmin');
     }
 
     /**

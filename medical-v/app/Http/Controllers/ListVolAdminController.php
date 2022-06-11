@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\kategori;
+use App\Models\listvoladmin;
 use Illuminate\Http\Request;
 
-class KategoriController extends Controller
+class ListVolAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +14,10 @@ class KategoriController extends Controller
      */
     public function index()
     {
-    //     return kategori::where('kode_kategori', auth()->user()->id)->get();
-    //    return view('kategori.kategori.index', [
-    //        'post'=> kategori::all()
-
-    //    ]);
-    return view('kategori.addkategori');
+        $data = listvoladmin::all();
+        return view('/Admin/indexdaftarvolunteer')->with([
+            'data' => $data
+        ]);
     }
 
     /**
@@ -40,31 +38,30 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        $kategori = new Kategori();
-        $kategori->kategori = $request->kategori;
-        $kategori->save();
-
-        return redirect('/addkategori');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\listvoladmin  $listvoladmin
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_user)
     {
-        //
+        $data = listvoladmin::findOrFail($id_user);
+        return view('/Admin/editvolunteeradmin')->with([
+            'data' => $data
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\listvoladmin  $listvoladmin
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(listvoladmin $listvoladmin)
     {
         //
     }
@@ -73,27 +70,28 @@ class KategoriController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\listvoladmin  $listvoladmin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_user)
     {
-        $kategori = Request::find($id);
-        $kategori->kode_kategori = $request->kategori;
-        $kategori->save();
-
-        return redirect('/org');
-
+        $item = listvoladmin::findOrFail($id_user);
+        $data = $request->except(['_token']);
+        $item->update($data);
+        return redirect('/daftarvolunteeradmin');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\listvoladmin  $listvoladmin
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id_user)
     {
-        //
+        $data = listvoladmin::find($id_user);
+        $data->delete();
+
+        return redirect('/daftarvolunteeradmin');
     }
 }
