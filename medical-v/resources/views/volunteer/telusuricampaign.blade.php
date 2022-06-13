@@ -48,95 +48,11 @@
                             </p>
                             <p class="card-text mt-5" style="color: red"><b>Pendaftaran dibuka hingga {{ $row->tgl_selesai_pendaftaran }}</b></p>
                             <a href="/detailcampaign/{{ $row->id }}" class="btn btn-lg medical-v-color-background" style="color: white">Lihat selengkapnya</a>
+                            <a href="#" class="btn btn-outline-success mt-4">Jadikan favorit</a>
                         </div>
                     </div>
                 </div>
             @endforeach
-            {{-- <div class="col-sm-4">
-                <div class="card">
-                    <img src="{{ asset('assets/img/unsplash/kids-health.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><b>Nama Campaign</b></h5>
-                        <button type="button" class="btn btn-sm btn-outline-success mt-3" disabled>Anak-Anak</button>
-                        <p class="card-text mt-4">
-                            <i class="fa-solid fa-circle"></i>  Kab. Banyumas, Jawa Tengah
-                        </p>
-                        <p class="card-text">
-                            <i class="fa-solid fa-circle"></i>  12 April - 12 Mei 2022
-                        </p>
-                        <p class="card-text mt-5" style="color: red"><b>Pendaftaran dibuka hingga 7 April</b></p>
-                        <a href="#" class="btn btn-lg medical-v-color-background" style="color: white">Lihat selengkapnya</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card">
-                    <img src="{{ asset('assets/img/unsplash/kids-health.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><b>Nama Campaign</b></h5>
-                        <button type="button" class="btn btn-sm btn-outline-success mt-3" disabled>Anak-Anak</button>
-                        <p class="card-text mt-4">
-                            <i class="fa-solid fa-circle"></i>  Kab. Banyumas, Jawa Tengah
-                        </p>
-                        <p class="card-text">
-                            <i class="fa-solid fa-circle"></i>  12 April - 12 Mei 2022
-                        </p>
-                        <p class="card-text mt-5" style="color: red"><b>Pendaftaran dibuka hingga 7 April</b></p>
-                        <a href="#" class="btn btn-lg medical-v-color-background" style="color: white">Lihat selengkapnya</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 mt-5">
-                <div class="card">
-                    <img src="{{ asset('assets/img/unsplash/kids-health.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><b>Nama Campaign</b></h5>
-                        <button type="button" class="btn btn-sm btn-outline-success mt-3" disabled>Anak-Anak</button>
-                        <p class="card-text mt-4">
-                            <i class="fa-solid fa-circle"></i>  Kab. Banyumas, Jawa Tengah
-                        </p>
-                        <p class="card-text">
-                            <i class="fa-solid fa-circle"></i>  12 April - 12 Mei 2022
-                        </p>
-                        <p class="card-text mt-5" style="color: red"><b>Pendaftaran dibuka hingga 7 April</b></p>
-                        <a href="#" class="btn btn-lg medical-v-color-background" style="color: white">Lihat selengkapnya</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 mt-5">
-                <div class="card">
-                    <img src="{{ asset('assets/img/unsplash/kids-health.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><b>Nama Campaign</b></h5>
-                        <button type="button" class="btn btn-sm btn-outline-success mt-3" disabled>Anak-Anak</button>
-                        <p class="card-text mt-4">
-                            <i class="fa-solid fa-circle"></i>  Kab. Banyumas, Jawa Tengah
-                        </p>
-                        <p class="card-text">
-                            <i class="fa-solid fa-circle"></i>  12 April - 12 Mei 2022
-                        </p>
-                        <p class="card-text mt-5" style="color: red"><b>Pendaftaran dibuka hingga 7 April</b></p>
-                        <a href="#" class="btn btn-lg medical-v-color-background" style="color: white">Lihat selengkapnya</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 mt-5">
-                <div class="card">
-                    <img src="{{ asset('assets/img/unsplash/kids-health.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><b>Nama Campaign</b></h5>
-                        <button type="button" class="btn btn-sm btn-outline-success mt-3" disabled>Anak-Anak</button>
-                        <p class="card-text mt-4">
-                            <i class="fa-solid fa-circle"></i>  Kab. Banyumas, Jawa Tengah
-                        </p>
-                        <p class="card-text">
-                            <i class="fa-solid fa-circle"></i>  12 April - 12 Mei 2022
-                        </p>
-                        <p class="card-text mt-5" style="color: red"><b>Pendaftaran dibuka hingga 7 April</b></p>
-                        <a href="#" class="btn btn-lg medical-v-color-background" style="color: white">Lihat selengkapnya</a>
-                    </div>
-                </div>
-            </div> --}}
         </div>
     </div>
 @endsection

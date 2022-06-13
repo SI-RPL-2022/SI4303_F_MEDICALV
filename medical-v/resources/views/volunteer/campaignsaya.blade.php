@@ -23,7 +23,7 @@
                             @csrf
                             @method('delete')
                             <a href="" class="btn btn-primary">Tulis Laporan</a>
-                            <button type="submit" class="btn btn-outline-danger mt-5">Berhenti dari Campaign</button>
+                            <button type="submit" class="btn btn-danger mt-4">Berhenti dari Campaign</button>
                         </form>
                         @else
                         <div></div>

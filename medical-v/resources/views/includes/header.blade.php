@@ -18,8 +18,12 @@
             </ul>
             @auth
                 <ul class="navbar-nav me-5">
-                    <li class="nav-item">
-                        <a class="nav-link font-nav posisi-nav-campaign mt-2 inline" href="/campaignsaya" style="color: black">Campaign Saya</a>
+                    <li class="nav-item dropdown posisi-nav-campaign">
+                        <a class="nav-link dropdown-toggle font-nav mt-2 inline" href="#" style="color: black" role="button" data-bs-toggle="dropdown" aria-expanded="true">Campaign Saya</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/campaignsaya">Terdaftar</a></li>
+                            <li><a class="dropdown-item" href="/campaignfavorit">Favorit</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link posisi-profile-header" href="#" style="color: black"><img src="{{ asset('assets/img/icon/profile.png') }}" alt="icon-profile"></a>

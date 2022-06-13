@@ -14,6 +14,7 @@ use App\Http\Controllers\RegistCampaignController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DaftarCampaignSuksesController;
 use App\Http\Controllers\CampaignSayaController;
+use App\Http\Controllers\CampaignFavoritController;
 use App\Http\Controllers\CampaignAdminController;
 
 
@@ -47,6 +48,7 @@ Route::get('/detailcampaign/{id}', [DetailCampaignController::class, 'detailcamp
 Route::get('/registcampaign/{id}', [RegistCampaignController::class, 'registcampaign']);
 Route::get('/daftarcampaignsukses', [DaftarCampaignSuksesController::class, 'daftarcampaignsukses']);
 Route::put('/daftarcampaignsukses/{id}', [DaftarCampaignSuksesController::class, 'storedaftarcampaignsukses']);
+Route::get('/campaignfavorit', [CampaignFavoritController::class, 'campaignfavorit']);
 Route::resource('/addkategori', KategoriController::class);
 Route::get('/kategori', function() {
     return view('kategori.index'); 
