@@ -7,8 +7,8 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/css/style1.css" />
-    <link rel="icon" href="assets/img/Logo3.png" />
+    <link media="all" type="text/css" rel="stylesheet" href="{{ URL::asset('assets/css/style1.css') }}"></link>
+    <link rel="icon" href="{{ URL::asset('assets/img/Logo3.png') }}"/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -27,14 +27,24 @@
         <div class="sidebar-header">
           <div class="sidebar-logo-container">
             <div class="logo-container">
-              <img class="logo-sidebar" src="assets/img/logo/Logo2.png" />
+              <img class="logo-sidebar" src="{{ URL::asset('assets/img/logo/Logo2.png') }}"/>
             </div>
           </div>
         </div>
         <div class="sidebar-body">
           <ul class="navigation-list">
+          <li class="navigation-list-item">
+              <a class="navigation-link" href="">
+                <div class="row">
+                  <div class="col-2">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </div>
+                  <div class="col-10">Dashboard</div>
+                </div>
+              </a>
+            </li>
             <li class="navigation-list-item">
-              <a class="navigation-link" href="/dashboardadmin">
+              <a class="navigation-link" href="/indexdaftarcampaignadmin">
                 <div class="row">
                   <div class="col-2">
                     <i class="fa-solid fa-circle-plus"></i>
@@ -44,22 +54,22 @@
               </a>
             </li>
             <li class="navigation-list-item">
-              <a class="navigation-link" href="">
+              <a class="navigation-link" href="/daftarorganisasiadmin">
+                <div class="row">
+                  <div class="col-2">
+                    <i class="fa-solid fa-circle-plus"></i>
+                  </div>
+                  <div class="col-10">Daftar Organisasi</div>
+                </div>
+              </a>
+            </li>
+            <li class="navigation-list-item">
+              <a class="navigation-link" href="/daftarvolunteeradmin">
                 <div class="row">
                   <div class="col-2">
                     <i class="fa-solid fa-circle-plus"></i>
                   </div>
                   <div class="col-10">Daftar Volunteer</div>
-                </div>
-              </a>
-            </li>
-            <li class="navigation-list-item">
-              <a class="navigation-link" href="">
-                <div class="row">
-                  <div class="col-2">
-                    <i class="fa-solid fa-circle-plus"></i>
-                  </div>
-                  <div class="col-10">Web Statistik</div>
                 </div>
               </a>
             </li>
@@ -73,7 +83,7 @@
           <div class="dropdown ms-auto ml-3">
             <button class="btn btn-secondary dropdown-toggle text-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown">
               Admin
-              <img class="profile" src="assets/img/unsplash/IAR2.png" />
+              <img class="profile" src="{{ URL::asset('assets/img/unsplash/IAR2.png') }}" />
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li><a class="dropdown-item" href="#">Action</a></li>
