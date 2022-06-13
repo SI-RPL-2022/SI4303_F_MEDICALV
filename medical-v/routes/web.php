@@ -15,7 +15,8 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DaftarCampaignSuksesController;
 use App\Http\Controllers\CampaignSayaController;
 use App\Http\Controllers\CampaignAdminController;
-
+use App\Http\Controllers\ListOrgAdminController;
+use App\Http\Controllers\ListVolAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,7 @@ Route::get('/update/{kode_kategori}', [KategoriController::class, 'update']);
 Route::get('/hapus/{kode_kategori}', [KategoriController::class, 'hapus']);
 Route::get('/destroy/{kode_kategori}', [KategoriController::class, 'destroy']);
 Route::get('/', [App\Http\Controllers\Auth::class,'login'])->name('auth.login');
+Route::get('/loginorganisasi', [App\Http\Controllers\Auth::class,'login'])->name('auth.login');
 
 Route::get('/register', [App\Http\Controllers\Auth::class,'register']);
 Route::post('/register', [App\Http\Controllers\Auth::class,'prosesRegister']);
@@ -79,7 +81,7 @@ Route::get('/logout', [App\Http\Controllers\Auth::class,'logout']);
 
 Route::get('/dashboard', [App\Http\Controllers\Dashboard::class,'index'])->name('dashboard')->middleware('login');
 
-Route::get('/dashboardadmin', [CampaignAdminController::class, 'index']);
+Route::get('/indexdaftarcampaignadmin', [CampaignAdminController::class, 'index']);
 Route::get('/create', [CampaignAdminController::class, 'create']);
 Route::post('/store', [CampaignAdminController::class, 'store']);
 Route::get('/show/{id}', [CampaignAdminController::class, 'show']);
@@ -90,3 +92,12 @@ Route::get('/orgreport', [OrgReport::class, 'index']);
 
 //volunteer
 Route::get('/volunteer', [VolunteerController::class, 'index']);
+Route::get('/daftarorganisasiadmin', [ListOrgAdminController::class, 'index']);
+Route::get('/showorganisasiadmin/{id_organisasi}', [ListOrgAdminController::class, 'show']);
+Route::post('/updateorganisasiadmin/{id_organisasi}', [ListOrgAdminController::class, 'update']);
+Route::get('/deleteorganisasiadmin/{id_organisasi}', [ListOrgAdminController::class, 'delete']);
+
+Route::get('/daftarvolunteeradmin', [ListVolAdminController::class, 'index']);
+Route::get('/showvolunteeradmin/{id_user}', [ListVolAdminController::class, 'show']);
+Route::post('/updatevolunteeradmin/{id_user}', [ListVolAdminController::class, 'update']);
+Route::get('/deletevolunteeradmin/{id_user}', [ListVolAdminController::class, 'delete']);

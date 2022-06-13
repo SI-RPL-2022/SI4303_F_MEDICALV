@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\listorgadmin;
 use Illuminate\Http\Request;
-use App\Models\campaignadmin;
 
-class CampaignAdminController extends Controller
+class ListOrgAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class CampaignAdminController extends Controller
      */
     public function index()
     {
-        $data = campaignadmin::all();
-        return view('/Admin/indexdaftarcampaignadmin')->with([
+        $data = listorgadmin::all();
+        return view('/Admin/indexdaftarorganisasi')->with([
             'data' => $data
         ]);
     }
@@ -27,7 +27,7 @@ class CampaignAdminController extends Controller
      */
     public function create()
     {
-        return view('create');
+        //
     }
 
     /**
@@ -38,21 +38,19 @@ class CampaignAdminController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except(['_token']);
-        campaignadmin::insert($data);
-        return redirect('/indexdaftarcampaignadmin');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\listorgadmin  $listorgadmin
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_organisasi)
     {
-        $data = campaignadmin::findOrFail($id);
-        return view('/Admin/editcampaignadmin')->with([
+        $data = listorgadmin::findOrFail($id_organisasi);
+        return view('/Admin/editorganisasiadmin')->with([
             'data' => $data
         ]);
     }
@@ -60,10 +58,10 @@ class CampaignAdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\listorgadmin  $listorgadmin
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(listorgadmin $listorgadmin)
     {
         //
     }
@@ -72,25 +70,28 @@ class CampaignAdminController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\listorgadmin  $listorgadmin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_organisasi)
     {
-        $item = campaignadmin::findOrFail($id);
+        $item = listorgadmin::findOrFail($id_organisasi);
         $data = $request->except(['_token']);
         $item->update($data);
-        return redirect('/indexdaftarcampaignadmin');
+        return redirect('/daftarorganisasiadmin');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\listorgadmin  $listorgadmin
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id_organisasi)
     {
-        //
+        $data = listorgadmin::find($id_organisasi);
+        $data->delete();
+
+        return redirect('/daftarorganisasiadmin')->with('success','Data Berhasil Dihapus');
     }
 }

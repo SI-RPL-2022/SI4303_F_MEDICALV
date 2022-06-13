@@ -93,7 +93,7 @@
         </fieldset>
                 
         <button type="submit" class="btn btn-primary">Update Campaign</button>
-        <a href="/dashboardadmin" class="btn btn-danger">Cancel</a>
+        <a href="/indexdaftarcampaignadmin" class="btn btn-danger">Cancel</a>
     </form>
 
 @endsection
