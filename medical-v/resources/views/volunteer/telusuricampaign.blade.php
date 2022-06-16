@@ -48,7 +48,11 @@
                             </p>
                             <p class="card-text mt-5" style="color: red"><b>Pendaftaran dibuka hingga {{ $row->tgl_selesai_pendaftaran }}</b></p>
                             <a href="/detailcampaign/{{ $row->id }}" class="btn btn-lg medical-v-color-background" style="color: white">Lihat selengkapnya</a>
-                            <a href="#" class="btn btn-outline-success mt-4">Jadikan favorit</a>
+                            <form action="campaignfavorit" method="post">
+                                @csrf
+                                <input type="hidden" name="campaign_id" value="{{ $row->id }}">
+                                <button type="submit" class="btn btn-outline-success mt-4">Jadikan favorit</button>
+                            </form>
                         </div>
                     </div>
                 </div>

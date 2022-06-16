@@ -45,4 +45,8 @@ class User extends Authenticatable
     public function campaign(){
         return $this->belongsTo(Campaign::class);
     }
+    public function campaigns()
+    {
+        return $this->belongsToMany(Campaign::class,'campaign_favorits');
+    }
 }

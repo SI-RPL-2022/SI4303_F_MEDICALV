@@ -49,7 +49,9 @@ Route::get('/detailcampaign/{id}', [DetailCampaignController::class, 'detailcamp
 Route::get('/registcampaign/{id}', [RegistCampaignController::class, 'registcampaign']);
 Route::get('/daftarcampaignsukses', [DaftarCampaignSuksesController::class, 'daftarcampaignsukses']);
 Route::put('/daftarcampaignsukses/{id}', [DaftarCampaignSuksesController::class, 'storedaftarcampaignsukses']);
-Route::get('/campaignfavorit', [CampaignFavoritController::class, 'campaignfavorit']);
+Route::post('/campaignfavorit', [CampaignFavoritController::class, 'campaignfavorit']);
+Route::get('/campaignfavorit', [CampaignFavoritController::class, 'getcampaignfavorit']);
+Route::delete('/campaignfavorit', [CampaignFavoritController::class, 'deletecampaignfavorit']);
 Route::resource('/addkategori', KategoriController::class);
 Route::get('/kategori', function() {
     return view('kategori.index'); 

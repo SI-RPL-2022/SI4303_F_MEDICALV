@@ -14,5 +14,8 @@ class Campaign extends Model
     public function user(){
         return $this->hasMany(User::class);
     }
+    public function users()
+    {
+        return $this->belongsToMany(User::class,'campaign_favorits');
+    }
 }
-

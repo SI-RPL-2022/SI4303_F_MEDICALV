@@ -15,8 +15,8 @@ class CreateLaporanCampaignsTable extends Migration
     {
         Schema::create('laporan_campaigns', function (Blueprint $table) {
             $table->id('id_report');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('campaign_id')->references('id')->on('campaigns');
+            $table->foreignId('user_id');
+            $table->foreignId('campaign_id');
             $table->string('path');
             $table->timestamps();
         });

@@ -15,8 +15,8 @@ class CreateCampaignReportsTable extends Migration
     {
         Schema::create('campaign_reports', function (Blueprint $table) {
             $table->id('id');
-            $table->unsiginedBigInt('user_id');
-            $table->unsiginedBigInt('campaign_id');
+            $table->foreignId('user_id');
+            $table->foreignId('campaign_id');
             $table->string('filename');
             $table->timestamps();
         });
