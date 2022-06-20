@@ -74,7 +74,7 @@ Route::get('/show/{kode_kategori}', [KategoriController::class, 'show']);
 Route::get('/update/{kode_kategori}', [KategoriController::class, 'update']);
 Route::get('/hapus/{kode_kategori}', [KategoriController::class, 'hapus']);
 Route::get('/destroy/{kode_kategori}', [KategoriController::class, 'destroy']);
-Route::get('/', [App\Http\Controllers\Auth::class,'login'])->name('auth.login');
+Route::get('/organisasi', [App\Http\Controllers\Auth::class,'login'])->name('auth.login');
 Route::get('/loginorganisasi', [App\Http\Controllers\Auth::class,'login'])->name('auth.login');
 
 Route::get('/register', [App\Http\Controllers\Auth::class,'register']);
