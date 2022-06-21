@@ -18,6 +18,7 @@ use App\Http\Controllers\CampaignFavoritController;
 use App\Http\Controllers\CampaignAdminController;
 use App\Http\Controllers\ListOrgAdminController;
 use App\Http\Controllers\ListVolAdminController;
+use App\Http\Controllers\CampaignController;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,3 +106,5 @@ Route::get('/daftarvolunteeradmin', [ListVolAdminController::class, 'index']);
 Route::get('/showvolunteeradmin/{id_user}', [ListVolAdminController::class, 'show']);
 Route::post('/updatevolunteeradmin/{id_user}', [ListVolAdminController::class, 'update']);
 Route::get('/deletevolunteeradmin/{id_user}', [ListVolAdminController::class, 'delete']);
+
+Route::get('test', [CampaignController::class, 'stat']);
