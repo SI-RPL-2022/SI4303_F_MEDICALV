@@ -8,6 +8,7 @@ use App\Http\Controllers\RegistervolController;
 use App\Http\Controllers\HomeCampaign;
 use App\Http\Controllers\OrgReport;
 use App\Http\Controllers\AddCampaign;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TelusuriCampaignController;
 use App\Http\Controllers\DetailCampaignController;
 use App\Http\Controllers\RegistCampaignController;
@@ -108,3 +109,5 @@ Route::post('/updatevolunteeradmin/{id_user}', [ListVolAdminController::class, '
 Route::get('/deletevolunteeradmin/{id_user}', [ListVolAdminController::class, 'delete']);
 
 Route::get('test', [CampaignController::class, 'stat']);
+
+Route::get('/admindashboard',[AdminController::class, 'index']);
