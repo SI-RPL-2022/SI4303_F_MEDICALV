@@ -81,11 +81,11 @@
                             <h1 class="card-text">{{ $campaign_selesai }}</h1>
                         </div>
                     </div>
-                    <div class="card" style="width: 18rem; height: 8rem; margin: 15px;">
+                    <!-- <div class="card" style="width: 18rem; height: 8rem; margin: 15px;">
                         <div class="card-body">
                             <h5 class="card-title">Campaign Progress</h5>
                             <h1 class="card-text">{{ $campaign_berjalan }}</h1>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
