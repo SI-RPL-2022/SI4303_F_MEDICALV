@@ -86,3 +86,10 @@ Route::post('/update/{id}', [CampaignAdminController::class, 'update']);
 
 Route::resource('/laporan', LaporanCampaign::class);
 
+
+Route::get('users', [UserController::class, 'index']);
+Route::get('dashboard/profile/{user_id}/edit', [UserController::class, 'edit']);
+Route::put('dashboard/profile/{profile_id}', [UserController::class, 'update']);
+Route::delete('dashboard/profile/{profile_id}', [UserController::class, 'destroy']);
+
+// Route::get()
