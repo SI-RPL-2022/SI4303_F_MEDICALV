@@ -22,7 +22,7 @@
                         <form action="campaignsaya" method="post">
                             @csrf
                             @method('delete')
-                            <a href="" class="btn btn-primary">Tulis Laporan</a>
+                            <a href="/uploadlaporan/{{ $campaign->id }}" class="btn btn-primary">Tulis Laporan</a>
                             <button type="submit" class="btn btn-danger mt-4">Berhenti dari Campaign</button>
                         </form>
                         @else

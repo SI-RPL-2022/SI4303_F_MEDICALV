@@ -12,7 +12,7 @@
     <div class="form-group cus-top-margin">
         <input type="hidden" name="org_id" value="1">
         <label for="nama_org" class="label-space">Penyelenggara</label>
-        <input type="text" name="nama_org" class="form-control">
+        <input type="text" name="nama_org" class="form-control" value="{{ session()->get('nama_organisasi') }}" readonly>
     </div>
     <div class="row">
         <div class="col-md-4 mb-3 cus-top-margin">

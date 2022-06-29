@@ -34,12 +34,14 @@
           <ul class="navigation-list">
             <li class="navigation-list-item">
               <a class="navigation-link" href="">
+                <a href="/org" class="text-decoration-none text-white">
                 <div class="row">
                   <div class="col-2">
                     <i class="fa-solid fa-circle-plus"></i>
                   </div>
                   <div class="col-10">Campaign Saya</div>
                 </div>
+                </a>
               </a>
             </li>
             <li class="navigation-list-item active">
@@ -87,7 +89,7 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="/logout">Logout</a></li>
             </ul>
           </div>
         </div>

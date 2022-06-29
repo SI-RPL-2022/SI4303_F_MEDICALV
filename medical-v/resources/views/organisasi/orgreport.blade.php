@@ -14,10 +14,10 @@
     @foreach ($report as $row)
     <tr>
         <td>{{$row->id}}</td>
-        <td>{{$row->user_id}}</td>
-        <td>{{$row->campaign_id}}</td>
-        <td>{{$row->path}}</td>
-        <td><a href="/docs/{{$row->path}}"><button class="btn btn-primary">Download</button></a></td>
+        <td>{{$row->user->name}}</td>
+        <td>{{$row->campaign->nama_campaign}}</td>
+        <td>{{$row->filename}}</td>
+        <td><a href="/docs/{{$row->filename}}"><button class="btn btn-primary">Download</button></a></td>
     </tr>
     @endforeach
         

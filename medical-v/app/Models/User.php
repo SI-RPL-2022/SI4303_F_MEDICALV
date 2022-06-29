@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Campaign::class,'campaign_favorits');
     }
+
+    public function report()
+    {
+        return $this->hasMany(CampaignReport::class);
+    }
 }

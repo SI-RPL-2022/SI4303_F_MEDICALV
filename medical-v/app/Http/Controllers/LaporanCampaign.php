@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\CampaignReport;
+use App\Models\Campaign;
 use Illuminate\Http\Request;
 
 class LaporanCampaign extends Controller
@@ -13,8 +14,7 @@ class LaporanCampaign extends Controller
      */
     public function index()
     {
-        //
-        return view('volunteer.uploadlaporan');
+        
     }
 
     /**
@@ -45,10 +45,10 @@ class LaporanCampaign extends Controller
         $report = new CampaignReport();
         $report->user_id = $request->user_id;
         $report->campaign_id = $request->campaign_id;
-        $report->path = $docs; 
+        $report->filename = $docs; 
         $report->save();
 
-        return redirect('/uploadlaporan');
+        return redirect('/campaignsaya');
     }
 
     /**
@@ -59,7 +59,8 @@ class LaporanCampaign extends Controller
      */
     public function show($id)
     {
-        //
+        $campaign = Campaign::find($id);
+        return view('volunteer.uploadlaporan', compact('campaign'));
     }
 
     /**

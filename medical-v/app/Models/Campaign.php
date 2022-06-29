@@ -18,4 +18,9 @@ class Campaign extends Model
     {
         return $this->belongsToMany(User::class,'campaign_favorits');
     }
+
+    public function report()
+    {
+        return $this->hasMany(CampaignReport::class);
+    }
 }

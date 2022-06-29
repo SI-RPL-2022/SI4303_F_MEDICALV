@@ -71,10 +71,10 @@ class Auth extends Controller
 
 		if($cekUser){
 			if(md5($request->password) == $cekUser->password){
-				session(['id_organisasi' => $request->id_organisasi]);
-				session(['nama_organisasi' => $request->nama_organisasi]);
-				session(['email_organisasi' => $request->email_organisasi]);
-				return redirect('dashboard');
+				session(['id_organisasi' => $cekUser->id_organisasi]);
+				session(['nama_organisasi' => $cekUser->nama_organisasi]);
+				session(['email_organisasi' => $cekUser->email_organisasi]);
+				return redirect('/org');
 			}else {
 				return back()->withInput()->with('error',"Password salah! Silahkan masukkan password dengan benar.");
 			}

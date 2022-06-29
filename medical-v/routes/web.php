@@ -81,7 +81,7 @@ Route::get('/loginorganisasi', [App\Http\Controllers\Auth::class,'login'])->name
 
 Route::get('/register', [App\Http\Controllers\Auth::class,'register']);
 Route::post('/register', [App\Http\Controllers\Auth::class,'prosesRegister']);
-Route::get('/login', [App\Http\Controllers\Auth::class,'login']);
+Route::get('/login', [App\Http\Controllers\Auth::class,'login'])->middleware('guest');
 Route::post('/login', [App\Http\Controllers\Auth::class,'prosesLogin']);
 Route::get('/logout', [App\Http\Controllers\Auth::class,'logout']);
 
