@@ -51,7 +51,7 @@
                             <form action="campaignfavorit" method="post">
                                 @csrf
                                 <input type="hidden" name="campaign_id" value="{{ $row->id }}">
-                                <button type="submit" class="btn btn-outline-success mt-4">Jadikan favorit</button>
+                                <button type="submit" class="btn btn-outline-success mt-4">Jadikan Favorit</button>
                             </form>
                         </div>
                     </div>
