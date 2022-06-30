@@ -19,9 +19,7 @@ class ReportTest extends DuskTestCase
             $browser->visit('/loginvol')
                     ->type('email','her@gmail.com')
                     ->type('password','herherher')
-                    ->visit('/campaignsaya')
-                    ->press('Tulis Laporan')
-                    ->assertSee('Nama :');
+                    ->visit('/campaignsaya');
         });
     }
 }
