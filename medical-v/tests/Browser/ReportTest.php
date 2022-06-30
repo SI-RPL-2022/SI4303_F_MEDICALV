@@ -10,15 +10,18 @@ class ReportTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
-     *@group report
+     * @group report
      * @return void
      */
     public function testExample()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/campaignsaya')
+            $browser->visit('/loginvol')
+                    ->type('email','her@gmail.com')
+                    ->type('password','herherher')
+                    ->visit('/campaignsaya')
                     ->press('Tulis Laporan')
-                    ->assertSee('Campaign');
+                    ->assertSee('Nama :');
         });
     }
 }
