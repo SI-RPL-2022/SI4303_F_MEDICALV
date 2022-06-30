@@ -62,6 +62,10 @@
                 </div>
 
                 <!-- page-content -->
+                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                    Dashboard Organisasi
+                </div>
+                
                 <div class="container d-flex">
                     <div class="card" style="width: 18rem; height: 8rem; margin: 15px;">
                         <div class="card-body">

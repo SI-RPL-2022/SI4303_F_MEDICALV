@@ -108,6 +108,6 @@ Route::get('/showvolunteeradmin/{id_user}', [ListVolAdminController::class, 'sho
 Route::post('/updatevolunteeradmin/{id_user}', [ListVolAdminController::class, 'update']);
 Route::get('/deletevolunteeradmin/{id_user}', [ListVolAdminController::class, 'delete']);
 
-Route::get('test', [CampaignController::class, 'stat']);
+Route::get('dashboardorganisasi', [CampaignController::class, 'stat']);
 
 Route::get('/admindashboard',[AdminController::class, 'index']);

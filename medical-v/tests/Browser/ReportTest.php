@@ -10,7 +10,7 @@ class ReportTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
-     *
+     *@group report
      * @return void
      */
     public function testExample()
